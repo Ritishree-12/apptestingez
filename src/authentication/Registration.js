@@ -27,7 +27,7 @@ const Registration = ({ navigation }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  const [password, setPassword] = useState(""); // Added password state
+  const [password, setPassword] = useState(""); 
 
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [errors, setErrors] = useState({});
@@ -75,9 +75,7 @@ const Registration = ({ navigation }) => {
       name,
       email,
       mobileNumber,
-      dob,
     };
-  
     // Check if other required fields are not empty
     if (!name || !email || !mobileNumber || !password) {
       Alert.alert("Incomplete Information", "Please fill in all required fields.");
@@ -85,7 +83,7 @@ const Registration = ({ navigation }) => {
     }
   
     try {
-      const response = await fetch('http://13.200.75.208:4001/v1/users/signUp/', {
+      const response = await fetch('https://fexmy.co//v1/users/signUp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
